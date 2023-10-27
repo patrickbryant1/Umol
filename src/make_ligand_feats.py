@@ -25,6 +25,7 @@ def bonds_from_smiles(smiles_string, atom_encoding):
     bond_encoding = {'SINGLE':1, 'DOUBLE':2, 'TRIPLE':3, 'AROMATIC':4, 'IONIC':5}
 
     #Go through the smiles and assign the atom types and a bond matrix
+    atoms = []
     atom_types = []
     num_atoms = len(m.GetAtoms())
     bond_matrix = np.zeros((num_atoms, num_atoms))
@@ -32,6 +33,7 @@ def bonds_from_smiles(smiles_string, atom_encoding):
 
     #Get the atom types
     for atom in m.GetAtoms():
+        atoms.append(atom.GetSymbol())
         atom_types.append(atom_encoding.get(atom.GetSymbol(),10))
         #Get neighbours and assign bonds
         for nb in atom.GetNeighbors():
@@ -54,7 +56,7 @@ def bonds_from_smiles(smiles_string, atom_encoding):
     has_bond = copy.deepcopy(bond_matrix)
     has_bond[has_bond>0]=1
 
-    return np.array(atom_types), bond_matrix, D*has_bond, has_bond
+    return np.array(atom_types), np.array(atoms), bond_matrix, D*has_bond, has_bond
 
 
 ##################MAIN#######################
@@ -71,15 +73,16 @@ atom_encoding = {'B':0, 'C':1, 'F':2, 'I':3, 'N':4, 'O':5, 'P':6, 'S':7,'Br':8, 
                  }
 
 #Get the atom types and bonds
-atom_types, bond_types, bond_lengths, bond_mask = bonds_from_smiles(input_smiles, atom_encoding)
+atom_types, atoms, bond_types, bond_lengths, bond_mask = bonds_from_smiles(input_smiles, atom_encoding)
 
 ligand_inp_feats = {}
-ligand_inp_feats['atoms'] = ligand_gt_feats['atoms']
+ligand_inp_feats['atoms'] = atoms
 ligand_inp_feats['atom_types'] = atom_types
 ligand_inp_feats['bond_types'] = bond_types
 ligand_inp_feats['bond_lengths'] = bond_lengths
 ligand_inp_feats['bond_mask'] = bond_mask
 #Write out features as a pickled dictionary.
+
 features_output_path = os.path.join(outdir, 'ligand_inp_features.pkl')
 with open(features_output_path, 'wb') as f:
     pickle.dump(ligand_inp_feats, f, protocol=4)

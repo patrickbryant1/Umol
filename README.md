@@ -63,6 +63,8 @@ cd ..
 ```
 ID=7NB4
 FASTA=./data/test_case/7NB4/7NB4.fasta
+POCKET_INDICES=./data/test_case/7NB4/7NB4_pocket_indices.npy
+LIGAND_SMILES='CCc1sc2ncnc(N[C@H](Cc3ccccc3)C(=O)O)c2c1-c1cccc(Cl)c1C'
 UNICLUST=./data/uniclust30_2018_08/uniclust30_2018_08
 OUTDIR=./data/test_case/7NB4/
 ```
@@ -73,5 +75,13 @@ $HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
 ```
 
 ## Generate input feats (seconds)
+
+python ./src/make_msa_seq_feats.py --input_fasta_path $FASTA \
+--input_msas $OUTDIR/$ID'.a3m' \
+--outdir $OUTDIR
+
+python ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
+--outdir $OUTDIR
+
 
 ## Predict (a few minutes)
