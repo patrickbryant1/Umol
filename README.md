@@ -18,6 +18,7 @@ On an NVIDIA A100 GPU, the prediction time is a few minutes on average.
 * For the python environment, we recommend to install it with pip as described below. \
 You can do this in your virtual environment of choice.
 
+```
 pip install -U jaxlib==0.3.24+cuda11.cudnn82 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html \
 pip install jax==0.3.24 \
 pip install ml-collections==0.1.1 \
@@ -32,7 +33,7 @@ pip install scipy==1.7.3 \
 pip install tensorflow==2.11.0 \
 pip install optax==0.1.4 \
 pip install rdkit-pypi \
-
+```
 
 ## Get network parameters for Umol
 
