@@ -15,7 +15,7 @@ The runtime will depend on the GPU you have available and the size of the protei
 On an NVIDIA A100 GPU, the prediction time is a few minutes on average.
 
 
-## Python packages
+## Install Python packages (several minutes)
 * For the python environment, we recommend to install it with pip as described below. \
 You can do this in your virtual environment of choice.
 
@@ -36,14 +36,14 @@ pip install optax==0.1.4
 pip install rdkit-pypi
 ```
 
-## Get network parameters for Umol
+## Get network parameters for Umol (a few minutes)
 
 ```
 wget https://zenodo.org/records/10048543/files/params40000.npy
 ```
 
 
-## Uniclust30
+## Get Uniclust30 (a few minutes)
 
 ```
 wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz --no-check-certificate
@@ -52,7 +52,7 @@ mv uniclust30_2018_08_hhsuite.tar.gz data/uniclust30
 tar -zxvf data/uniclust30/uniclust30_2018_08_hhsuite.tar.gz
 ```
 
-## HHblits
+## Install HHblits (a few minutes)
 ```
 git clone https://github.com/soedinglab/hh-suite.git
 mkdir -p hh-suite/build && cd hh-suite/build
@@ -61,7 +61,7 @@ make -j 4 && make install
 cd ..
 ```
 
-# Run the test case
+# Run the test case (<10 minutes)
 ```
 ID=7NB4
 FASTA=./data/test_case/7NB4/7NB4.fasta
