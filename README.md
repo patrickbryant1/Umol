@@ -63,7 +63,7 @@ make -j 4 && make install
 cd ..
 ```
 
-# Run the test case (<10 minutes)
+# Run the test case
 ```
 ID=7NB4
 FASTA=./data/test_case/7NB4/7NB4.fasta
