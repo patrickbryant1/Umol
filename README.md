@@ -18,20 +18,20 @@ On an NVIDIA A100 GPU, the prediction time is a few minutes on average.
 * For the python environment, we recommend to install it with pip as described below. \
 You can do this in your virtual environment of choice.
 
-pip install -U jaxlib==0.3.24+cuda11.cudnn82 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-pip install jax==0.3.24
-pip install ml-collections==0.1.1
-pip install dm-haiku==0.0.9
-pip install pandas==1.3.5
-pip install biopython==1.81
-pip install chex==0.1.5
+pip install -U jaxlib==0.3.24+cuda11.cudnn82 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html \
+pip install jax==0.3.24 \
+pip install ml-collections==0.1.1 \
+pip install dm-haiku==0.0.9 \ 
+pip install pandas==1.3.5 \
+pip install biopython==1.81 \ 
+pip install chex==0.1.5 \
 pip install dm-tree==0.1.8
 pip install immutabledict==2.0.0
-pip install numpy==1.21.6
-pip install scipy==1.7.3
-pip install tensorflow==2.11.0
-pip install optax==0.1.4
-pip install rdkit-pypi
+pip install numpy==1.21.6 \
+pip install scipy==1.7.3 \
+pip install tensorflow==2.11.0 \
+pip install optax==0.1.4 \
+pip install rdkit-pypi \
 
 
 ## Get network parameters for Umol
@@ -60,8 +60,17 @@ cd ..
 ```
 
 # Run the test case
-
+```
+ID=7NB4
+FASTA=./data/test_case/7NB4/7NB4.fasta
+UNICLUST=./data/uniclust30_2018_08/uniclust30_2018_08
+OUTDIR=./data/test_case/7NB4/
+```
 ## Search Uniclust30 with HHblits to generate an MSA (a few minutes)
+```
+HHBLITS=./hh-suite/build/bin/hhblits
+$HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
+```
 
 ## Generate input feats (seconds)
 
