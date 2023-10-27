@@ -6,6 +6,8 @@ Umol is available under the [Apache License, Version 2.0](http://www.apache.org/
 The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
 # Colab
+It is possible to run Umol directly in the web with Google Colab. \
+Click this link and follow the instructions.
 
 
 # Local installation
