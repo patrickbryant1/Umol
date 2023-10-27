@@ -75,13 +75,13 @@ $HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
 ```
 
 ## Generate input feats (seconds)
-
+```
 python ./src/make_msa_seq_feats.py --input_fasta_path $FASTA \
 --input_msas $OUTDIR/$ID'.a3m' \
 --outdir $OUTDIR
 
 python ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
 --outdir $OUTDIR
-
+```
 
 ## Predict (a few minutes)
