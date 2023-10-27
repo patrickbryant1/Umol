@@ -5,6 +5,8 @@
 Umol is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). \
 The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
+# Colab
+
 
 # Local installation
 
@@ -37,7 +39,7 @@ pip install rdkit-pypi
 ## Get network parameters for Umol
 
 ```
-wget link
+wget https://zenodo.org/records/10048543/files/params40000.npy
 ```
 
 
