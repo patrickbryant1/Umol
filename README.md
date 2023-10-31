@@ -11,7 +11,6 @@ Click this link and follow the instructions.
 
 
 # Local installation
-
 The entire installation takes <1 hour on a standard computer. \
 The runtime will depend on the GPU you have available and the size of the protein-ligand complex you are predicting. \
 On an NVIDIA A100 GPU, the prediction time is a few minutes on average.
@@ -42,6 +41,8 @@ pip install rdkit-pypi
 
 ```
 wget https://zenodo.org/records/10048543/files/params40000.npy
+mkdir data/params
+mv params40000.npy  data/params/
 ```
 
 
@@ -89,3 +90,19 @@ python ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
 ```
 
 ## Predict (a few minutes)
+```
+MSA_FEATS=$OUTDIR/msa_features.pkl
+LIGAND_FEATS=$OUTDIR/ligand_inp_features.pkl
+PARAMS=data/params/params40000.npy
+NUM_RECYCLES=3
+
+python ./src/predict.py --msa_features  $MSA_FEATS \
+--ligand_features $LIGAND_FEATS \
+--id $ID \
+--ckpt_params $PARAMS \
+--target_pos $POCKET_INDICES \
+--num_recycles $NUM_RECYCLES \
+--outdir $OUTDIR
+```
+
+## Generate ligand conformer and relax.

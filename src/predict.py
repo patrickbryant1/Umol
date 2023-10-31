@@ -39,7 +39,7 @@ parser = argparse.ArgumentParser(description = """Predict a protein-ligand struc
 parser.add_argument('--msa_features', nargs=1, type= str, default=sys.stdin, help = 'Path to location of MSA features.')
 parser.add_argument('--ligand_features', nargs=1, type= str, default=sys.stdin, help = 'Path to location of ligand features.')
 parser.add_argument('--id', nargs=1, type= str, default=sys.stdin, help = 'Example ID.')
-parser.add_argument('--ckpt_params', nargs=1, type= str, default=sys.stdin, help = 'Params to start use.')
+parser.add_argument('--ckpt_params', nargs=1, type= str, default=sys.stdin, help = 'Params to use.')
 parser.add_argument('--target_pos', nargs=1, type= str, default=sys.stdin, help = 'Positions to target (pocket).')
 parser.add_argument('--num_recycles', nargs=1, type= int, default=sys.stdin, help = 'Number of recycles to use in the prediction.')
 parser.add_argument('--outdir', nargs=1, type= str, default=sys.stdin, help = 'Path to output directory. Include /in end')
@@ -61,7 +61,7 @@ def process_protein_features(raw_features, config, random_seed):
     return features.np_example_to_features(np_example=raw_features,
                                             config=config,
                                             random_seed=random_seed)
-                                            
+
 
 def make_uniform(protein_feats, ligand_feats, crop_size):
     """Add all feats together - pad if needed
