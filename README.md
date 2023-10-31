@@ -42,6 +42,7 @@ To do this, first install miniconda, see: https://docs.conda.io/projects/minicon
 
 ```
 conda create -c conda-forge --name openmm openmm
+conda activate openmm #Assumes you have conda in your path
 conda install -c conda-forge openff-toolkit
 conda install -c conda-forge pdbfixer
 pip install --upgrade lxml
