@@ -115,17 +115,17 @@ python ./src/predict.py --msa_features  $MSA_FEATS \
 --target_pos $POCKET_INDICES \
 --num_recycles $NUM_RECYCLES \
 --outdir $OUTDIR
-```
 
-## Generate a ligand conformer and relax the protein (a few minutes)
-```
+wait
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
-RESTRAINTS="CA+ligand" # or "protein"
-
 python ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIG_SMILES --outdir $OUTDIR
+```
 
+## Relax the protein (a few minutes)
+```
 conda activate openmm #Assumes you have conda in your path
+RESTRAINTS="CA+ligand" # or "protein"
 
 python ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
                         --ligand_sdf $ligand_sdf \
