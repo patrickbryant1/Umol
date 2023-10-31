@@ -240,7 +240,7 @@ def predict(config,
             'structure_module':{'final_atom_positions':ret['structure_module']['final_atom_positions'],
             'final_atom_mask': ret['structure_module']['final_atom_mask']
             }}
-    outname = outdir+id+'_pred_unrelaxed.pdb'
+    outname = outdir+id+'_pred_raw.pdb'
     save_structure(save_feats, result, outname)
 
 

@@ -105,4 +105,23 @@ python ./src/predict.py --msa_features  $MSA_FEATS \
 --outdir $OUTDIR
 ```
 
-## Generate ligand conformer and relax.
+## Generate ligand conformer and relax (a few minutes).
+```
+RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
+RESTRAINTS="CA+ligand" # or "protein"
+
+python ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
+--ligand_smiles $LIG_SMILES --outdir $OUTDIR
+
+
+python ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
+                        --ligand_sdf $ligand_sdf \
+                        --file_name $ID \
+                        --restraint_type $RESTRAINTS \
+                        --outdir $OUTDIR
+
+python ./src/relax/add_plddt_to_relaxed.py  --raw_complex $RAW_COMPLEX \
+--relaxed_complex $RELAXED_COMPLEX  \
+--outdir $OUTDIR
+
+```
