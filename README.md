@@ -1,6 +1,7 @@
 # Umol
 ## Structure prediction of protein-ligand complexes from sequence information
 
+<img src="./Network.svg"/>
 
 Umol is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). \
 The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
