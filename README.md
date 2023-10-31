@@ -116,7 +116,7 @@ python ./src/predict.py --msa_features  $MSA_FEATS \
 --outdir $OUTDIR
 ```
 
-## Generate ligand conformer and relax (a few minutes).
+## Generate a ligand conformer and relax the protein (a few minutes)
 ```
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
 RESTRAINTS="CA+ligand" # or "protein"
