@@ -37,8 +37,8 @@ pip install optax==0.1.4
 pip install rdkit-pypi
 ```
 
-You also have to install a conda environment for OpenMM.
-To install miniconda, see: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
+You also have to install a conda environment for OpenMM used in the protein relaxation.
+To do this, first install miniconda, see: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
 
 ```
 conda create -c conda-forge --name openmm openmm
