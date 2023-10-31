@@ -37,6 +37,16 @@ pip install optax==0.1.4
 pip install rdkit-pypi
 ```
 
+You also have to install a conda environment for OpenMM.
+To install miniconda, see: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
+
+```
+conda create -c conda-forge --name openmm openmm
+conda install -c conda-forge openff-toolkit
+conda install -c conda-forge pdbfixer
+pip install --upgrade lxml
+```
+
 ## Get network parameters for Umol (a few minutes)
 
 ```
@@ -113,6 +123,7 @@ RESTRAINTS="CA+ligand" # or "protein"
 python ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIG_SMILES --outdir $OUTDIR
 
+conda activate openmm #Assumes you have conda in your path
 
 python ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
                         --ligand_sdf $ligand_sdf \
