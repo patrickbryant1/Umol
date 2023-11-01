@@ -81,7 +81,7 @@ UNICLUST=./data/uniclust30_2018_08/uniclust30_2018_08
 OUTDIR=./data/test_case/7NB4/
 ```
 ## Search Uniclust30 with HHblits to generate an MSA (a few minutes)
-25 Gb download, 87 Gb extracted
+### 25 Gb download, 87 Gb extracted
 ```
 HHBLITS=./hh-suite/build/bin/hhblits
 $HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
