@@ -122,6 +122,7 @@ python3 ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIGAND_SMILES --outdir $OUTDIR
 
 grep ATOM $OUTDIR/$ID'_pred_raw.pdb' > $OUTDIR/$ID'_pred_protein.pdb'
+echo "The unrelaxed predicted protein can be found at $OUTDIR/$ID'_pred_protein.pdb' and the ligand at $OUTDIR/$ID'_pred_ligand.pdb'"
 ```
 
 ## Relax the protein (a few minutes)
@@ -138,10 +139,12 @@ python3 ./src/relax/openmm_relax.py --input_pdb $PRED_PROTEIN \
                         --restraint_type $RESTRAINTS \
                         --outdir $OUTDIR
 
+#Deactivate conda - only for the relaxation
+conda deactivate
 RAW_COMPLEX=$OUTDIR/$ID'_pred_raw.pdb'
 RELAXED_COMPLEX=$OUTDIR/$ID'_relaxed_complex.pdb'
 python3 ./src/relax/add_plddt_to_relaxed.py  --raw_complex $RAW_COMPLEX \
 --relaxed_complex $RELAXED_COMPLEX  \
 --outdir $OUTDIR
-
+echo "The final relaxed structure can be found at $OUTDIR/$ID'_relaxed_plddt.pdb'"
 ```
