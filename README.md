@@ -71,6 +71,8 @@ mkdir -p hh-suite/build && cd hh-suite/build
 cmake -DCMAKE_INSTALL_PREFIX=. ..
 make -j 4 && make install
 cd ../..
+mv data/uniclust30/uniclust30_2018_08 data/
+rm -r data/uniclust30
 ```
 
 # Run the test case
