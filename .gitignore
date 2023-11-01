@@ -6,3 +6,5 @@ data/test_case/7NB4/ligand_inp_features.pkl
 data/test_case/7NB4/msa_features.pkl
 src/net/common/__pycache__
 src/net/data/__pycache__
+src/net/model/__pycache__
+src/net/model/tf/__pycache__
