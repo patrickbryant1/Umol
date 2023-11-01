@@ -204,7 +204,7 @@ conf_err.to_csv(outdir+'conformer_dmat_err.csv', index=None)
 aligned_conf_pos = align_coords_transform(pred_ligand['chain_coords'], best_conf_pos, nonH_inds)
 
 #Write sdf - better to define bonds
-write_sdf(mol, best_conf, aligned_conf_pos, best_conf_id, outdir+'pred_ligand_conf.sdf')
+write_sdf(mol, best_conf, aligned_conf_pos, best_conf_id, outdir+'pred_ligand.sdf')
 
 #Write pdb with ligand file
 #write_pdb(aligned_conf_pos, atoms, pred_ligand['chain_bfactors'], pred_ligand['chain_atom_numbers'][0], outdir+'best_ligand_conf.pdb')

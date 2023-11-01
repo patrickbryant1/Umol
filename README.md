@@ -120,12 +120,16 @@ wait
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
 python3 ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIGAND_SMILES --outdir $OUTDIR
+
+grep ATOM $OUTDIR/$ID'_pred_raw.pdb' > $OUTDIR/$ID'_pred_protein.pdb'
 ```
 
 ## Relax the protein (a few minutes)
 This fixes clashes mainly in the protein, but also in the protein-ligand interface.
 ```
 conda activate openmm #Assumes you have conda in your path
+PRED_PROTEIN=$OUTDIR/$ID'_pred_protein.pdb'
+PRED_LIGAND
 RESTRAINTS="CA+ligand" # or "protein"
 
 python3 ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
