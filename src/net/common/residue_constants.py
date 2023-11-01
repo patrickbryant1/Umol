@@ -780,10 +780,10 @@ def _make_rigid_transformation_4x4(ex, ey, translation):
 
 #Modified - added ligand atoms here
 num_ligand_atoms=8
-restype_atom37_to_rigid_group = np.zeros([21+num_ligand_atoms, 37], dtype=np.int)
+restype_atom37_to_rigid_group = np.zeros([21+num_ligand_atoms, 37], dtype=np.int32)
 restype_atom37_mask = np.zeros([21+num_ligand_atoms, 37], dtype=np.float32)
 restype_atom37_rigid_group_positions = np.zeros([21+num_ligand_atoms, 37, 3], dtype=np.float32)
-restype_atom14_to_rigid_group = np.zeros([21+num_ligand_atoms, 14], dtype=np.int)
+restype_atom14_to_rigid_group = np.zeros([21+num_ligand_atoms, 14], dtype=np.int32)
 restype_atom14_mask = np.zeros([21+num_ligand_atoms, 14], dtype=np.float32)
 restype_atom14_rigid_group_positions = np.zeros([21+num_ligand_atoms, 14, 3], dtype=np.float32)
 restype_rigid_group_default_frame = np.zeros([21+num_ligand_atoms, 8, 4, 4], dtype=np.float32)
