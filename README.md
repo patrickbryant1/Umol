@@ -59,7 +59,9 @@ mv params40000.npy  data/params/
 wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz --no-check-certificate
 mkdir data/uniclust30
 mv uniclust30_2018_08_hhsuite.tar.gz data/uniclust30
-tar -zxvf data/uniclust30/uniclust30_2018_08_hhsuite.tar.gz
+cd data/uniclust30
+tar -zxvf uniclust30_2018_08_hhsuite.tar.gz
+cd ../..
 ```
 
 ## Install HHblits (a few minutes)
@@ -68,7 +70,7 @@ git clone https://github.com/soedinglab/hh-suite.git
 mkdir -p hh-suite/build && cd hh-suite/build
 cmake -DCMAKE_INSTALL_PREFIX=. ..
 make -j 4 && make install
-cd ..
+cd ../..
 ```
 
 # Run the test case
