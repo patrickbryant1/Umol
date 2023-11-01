@@ -200,7 +200,7 @@ if __name__ == "__main__":
         system,
         modeller.positions,
         outdir,
-        f'{file_name}_complex'
+        f'{file_name}_relaxed_complex'
     )
 
     print(f'Time taken for calculation is {time.time()-start_time:.1f} seconds')

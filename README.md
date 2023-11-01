@@ -129,15 +129,17 @@ This fixes clashes mainly in the protein, but also in the protein-ligand interfa
 ```
 conda activate openmm #Assumes you have conda in your path
 PRED_PROTEIN=$OUTDIR/$ID'_pred_protein.pdb'
-PRED_LIGAND
+PRED_LIGAND=$OUTDIR/$ID'_pred_ligand.sdf'
 RESTRAINTS="CA+ligand" # or "protein"
 
-python3 ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
-                        --ligand_sdf $ligand_sdf \
+python3 ./src/relax/openmm_relax.py --input_pdb $PRED_PROTEIN \
+                        --ligand_sdf $PRED_LIGAND \
                         --file_name $ID \
                         --restraint_type $RESTRAINTS \
                         --outdir $OUTDIR
 
+RAW_COMPLEX=$OUTDIR/$ID'_pred_raw.pdb'
+RELAXED_COMPLEX=$OUTDIR/$ID'_relaxed_complex.pdb'
 python3 ./src/relax/add_plddt_to_relaxed.py  --raw_complex $RAW_COMPLEX \
 --relaxed_complex $RELAXED_COMPLEX  \
 --outdir $OUTDIR
