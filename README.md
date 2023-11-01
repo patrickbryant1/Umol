@@ -53,7 +53,7 @@ mv params40000.npy  data/params/
 ```
 
 
-## Get Uniclust30 (a few minutes)
+## Get Uniclust30 (10-20 minutes depending on bandwidth)
 25 Gb download, 87 Gb extracted
 ```
 wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz --no-check-certificate
