@@ -117,7 +117,7 @@ python3 ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIGAND_SMILES --outdir $OUTDIR
 
 grep ATOM $OUTDIR/$ID'_pred_raw.pdb' > $OUTDIR/$ID'_pred_protein.pdb'
-echo "The unrelaxed predicted protein can be found at $OUTDIR/$ID'_pred_protein.pdb' and the ligand at $OUTDIR/$ID'_pred_ligand.pdb'"
+echo "The unrelaxed predicted protein can be found at $OUTDIR/$ID'_pred_protein.pdb' and the ligand at $OUTDIR/$ID'_pred_ligand.sdf'"
 ```
 
 ## Relax the protein (a few minutes)
