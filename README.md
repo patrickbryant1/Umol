@@ -28,7 +28,7 @@ pip install dm-tree==0.1.8
 pip install immutabledict==2.0.0
 pip install numpy==1.21.6
 pip install scipy==1.7.3
-pip install tensorflow==2.11.0
+pip install tensorflow==2.12.0
 pip install optax==0.1.4
 pip install rdkit-pypi
 ```
