@@ -93,11 +93,11 @@ $HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
 
 ## Generate input feats (seconds)
 ```
-python ./src/make_msa_seq_feats.py --input_fasta_path $FASTA \
+python3 ./src/make_msa_seq_feats.py --input_fasta_path $FASTA \
 --input_msas $OUTDIR/$ID'.a3m' \
 --outdir $OUTDIR
 
-python ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
+python3 ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
 --outdir $OUTDIR
 ```
 
@@ -108,7 +108,7 @@ LIGAND_FEATS=$OUTDIR/ligand_inp_features.pkl
 PARAMS=data/params/params40000.npy
 NUM_RECYCLES=3
 
-python ./src/predict.py --msa_features  $MSA_FEATS \
+python3 ./src/predict.py --msa_features  $MSA_FEATS \
 --ligand_features $LIGAND_FEATS \
 --id $ID \
 --ckpt_params $PARAMS \
@@ -118,7 +118,7 @@ python ./src/predict.py --msa_features  $MSA_FEATS \
 
 wait
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
-python ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
+python3 ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 --ligand_smiles $LIG_SMILES --outdir $OUTDIR
 ```
 
@@ -128,13 +128,13 @@ This fixes clashes mainly in the protein, but also in the protein-ligand interfa
 conda activate openmm #Assumes you have conda in your path
 RESTRAINTS="CA+ligand" # or "protein"
 
-python ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
+python3 ./src/relax/openmm_relax.py --input_pdb $protein_pdb \
                         --ligand_sdf $ligand_sdf \
                         --file_name $ID \
                         --restraint_type $RESTRAINTS \
                         --outdir $OUTDIR
 
-python ./src/relax/add_plddt_to_relaxed.py  --raw_complex $RAW_COMPLEX \
+python3 ./src/relax/add_plddt_to_relaxed.py  --raw_complex $RAW_COMPLEX \
 --relaxed_complex $RELAXED_COMPLEX  \
 --outdir $OUTDIR
 
