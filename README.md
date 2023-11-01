@@ -54,7 +54,7 @@ mv params40000.npy  data/params/
 
 
 ## Get Uniclust30 (a few minutes)
-
+25 Gb download, 87 Gb extracted
 ```
 wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz --no-check-certificate
 mkdir data/uniclust30
@@ -81,7 +81,6 @@ UNICLUST=./data/uniclust30_2018_08/uniclust30_2018_08
 OUTDIR=./data/test_case/7NB4/
 ```
 ## Search Uniclust30 with HHblits to generate an MSA (a few minutes)
-### 25 Gb download, 87 Gb extracted
 ```
 HHBLITS=./hh-suite/build/bin/hhblits
 $HHBLITS -i $FASTA -d $UNICLUST -E 0.001 -all -oa3m $OUTDIR/$ID'.a3m'
