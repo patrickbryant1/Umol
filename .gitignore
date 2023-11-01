@@ -2,5 +2,7 @@
 data/.DS_Store
 data/test_case/.DS_Store
 data/test_case/7NB4/.DS_Store
-./data/test_case/7NB4/ligand_inp_features.pkl
-./data/test_case/7NB4/msa_features.pkl
+data/test_case/7NB4/ligand_inp_features.pkl
+data/test_case/7NB4/msa_features.pkl
+src/net/common/__pycache__
+src/net/data/__pycache__
