@@ -19,9 +19,6 @@ from collections import Counter
 from scipy.special import softmax
 import pdb
 
-#Data loading
-from tinyloader import DataLoader
-
 #net imports
 from net.common import protein
 from net.common import residue_constants

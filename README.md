@@ -123,6 +123,7 @@ python ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
 ```
 
 ## Relax the protein (a few minutes)
+This fixes clashes mainly in the protein, but also in the protein-ligand interface.
 ```
 conda activate openmm #Assumes you have conda in your path
 RESTRAINTS="CA+ligand" # or "protein"
