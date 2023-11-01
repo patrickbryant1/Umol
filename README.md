@@ -119,7 +119,7 @@ python3 ./src/predict.py --msa_features  $MSA_FEATS \
 wait
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'
 python3 ./src/relax/align_ligand_conformer.py --pred_pdb $RAW_PDB \
---ligand_smiles $LIG_SMILES --outdir $OUTDIR
+--ligand_smiles $LIGAND_SMILES --outdir $OUTDIR
 ```
 
 ## Relax the protein (a few minutes)
