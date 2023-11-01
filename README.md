@@ -80,8 +80,8 @@ cd ..
 ```
 ID=7NB4
 FASTA=./data/test_case/7NB4/7NB4.fasta
-POCKET_INDICES=./data/test_case/7NB4/7NB4_pocket_indices.npy
-LIGAND_SMILES='CCc1sc2ncnc(N[C@H](Cc3ccccc3)C(=O)O)c2c1-c1cccc(Cl)c1C'
+POCKET_INDICES=./data/test_case/7NB4/7NB4_pocket_indices.npy #Zero indexed numpy array of what residues are in the pocket
+LIGAND_SMILES='CCc1sc2ncnc(N[C@H](Cc3ccccc3)C(=O)O)c2c1-c1cccc(Cl)c1C' #Make sure these are canonical as in RDKit
 UNICLUST=./data/uniclust30_2018_08/uniclust30_2018_08
 OUTDIR=./data/test_case/7NB4/
 ```
