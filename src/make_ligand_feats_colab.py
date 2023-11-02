@@ -3,8 +3,6 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import numpy as np
 import copy
-import pickle
-from ast import literal_eval
 import os
 import sys
 import pdb
