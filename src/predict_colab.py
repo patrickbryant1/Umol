@@ -12,7 +12,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow.compat.v1 as tf
 tf.config.set_visible_devices([], 'GPU')
 
-import argparse
 import pandas as pd
 import numpy as np
 from collections import Counter
@@ -26,20 +25,6 @@ from net.model import config
 from net.model import features
 from net.model import modules
 
-#JAX will preallocate 90% of currently-available GPU memory when the first JAX operation is run.
-#This prevents this
-#os.environ['XLA_PYTHON_CLIENT_PREALLOCATE'] = 'false'
-
-
-parser = argparse.ArgumentParser(description = """Predict a protein-ligand structure.""")
-
-parser.add_argument('--msa_features', nargs=1, type= str, default=sys.stdin, help = 'Path to location of MSA features.')
-parser.add_argument('--ligand_features', nargs=1, type= str, default=sys.stdin, help = 'Path to location of ligand features.')
-parser.add_argument('--id', nargs=1, type= str, default=sys.stdin, help = 'Example ID.')
-parser.add_argument('--ckpt_params', nargs=1, type= str, default=sys.stdin, help = 'Params to use.')
-parser.add_argument('--target_pos', nargs=1, type= str, default=sys.stdin, help = 'Positions to target (pocket).')
-parser.add_argument('--num_recycles', nargs=1, type= int, default=sys.stdin, help = 'Number of recycles to use in the prediction.')
-parser.add_argument('--outdir', nargs=1, type= str, default=sys.stdin, help = 'Path to output directory. Include /in end')
 
 ##############FUNCTIONS##############
 
@@ -269,24 +254,3 @@ def save_structure(save_feats, result, outname):
         f.write(unrelaxed_pdb)
 
 
-##################MAIN#######################
-
-#Parse args
-args = parser.parse_args()
-msa_features = args.msa_features[0]
-ligand_features = args.ligand_features[0]
-id = args.id[0]
-ckpt_params =  np.load(args.ckpt_params[0], allow_pickle=True)
-target_pos = np.load(args.target_pos[0])
-num_recycles = args.num_recycles[0]
-outdir = args.outdir[0]
-
-#Predict
-predict(config.CONFIG,
-            msa_features,
-            ligand_features,
-            id,
-            target_pos,
-            ckpt_params,
-            num_recycles,
-            outdir=outdir)
