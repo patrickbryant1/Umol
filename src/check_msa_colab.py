@@ -7,8 +7,6 @@ def read_a3m(a3mfile):
     '''Read an a3m file
     '''
     parsed_a3m = {}
-    #Regex pattern
-    pattern =  '[A-Z]+'
     nhits = 0
     with open(a3mfile, 'r') as file:
         for line in file:

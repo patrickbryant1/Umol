@@ -15,7 +15,6 @@
 
 import os
 from typing import Mapping, Optional, Sequence
-import argparse
 import pickle
 import sys
 from net.common import residue_constants
@@ -24,11 +23,6 @@ import numpy as np
 import pdb
 # Internal import (7716).
 
-parser = argparse.ArgumentParser(description = """Builds the input features for training the structure prediction model.""")
-
-parser.add_argument('--input_fasta_path', nargs=1, type= str, default=sys.stdin, help = 'Path to fasta.')
-parser.add_argument('--input_msas', nargs=1, type= str, default=sys.stdin, help = 'Path to MSAs. Separated by comma.')
-parser.add_argument('--outdir', nargs=1, type= str, default=sys.stdin, help = 'Path to output directory. Include /in end')
 
 FeatureDict = Mapping[str, np.ndarray]
 
@@ -119,20 +113,8 @@ def process(input_fasta_path: str, input_msas: list) -> FeatureDict:
     return {**sequence_features, **msa_features}
 
 
-##################MAIN#######################
 
-#Parse args
-args = parser.parse_args()
-#Data
-input_fasta_path = args.input_fasta_path[0]
-input_msas = args.input_msas[0].split(',')
-outdir = args.outdir[0]
-#Get feats
-feature_dict = process(input_fasta_path, input_msas)
 
-#Write out features as a pickled dictionary.
-features_output_path = os.path.join(outdir, 'msa_features.pkl')
-with open(features_output_path, 'wb') as f:
-    pickle.dump(feature_dict, f, protocol=4)
-print('Saved MSA features to',features_output_path)
+
+
 
