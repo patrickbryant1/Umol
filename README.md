@@ -6,6 +6,10 @@
 Umol is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). \
 The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
+# Colab (run in the web)
+
+[Colab Notebook](https://colab.research.google.com/github/patrickbryant1/Umol/blob/master/Umol.ipynb)
+
 # Local installation
 The entire installation takes <1 hour on a standard computer. \
 The runtime will depend on the GPU you have available and the size of the protein-ligand complex you are predicting. \
