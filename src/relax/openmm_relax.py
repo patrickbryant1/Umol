@@ -111,7 +111,7 @@ def add_restraints(
 if __name__ == "__main__":
 
     start_time = time.time()
-    parser = argparse.ArgumentParser(description = '''Fold with l-BFGS in openmm using predicted constraints.''')
+    parser = argparse.ArgumentParser(description = '''Relax protein-ligand complex.''')
 
     parser.add_argument('--input_pdb', nargs=1, type= str, default=sys.stdin, help = 'Path to folded structure with protein.')
     parser.add_argument('--outdir', nargs=1, type= str, default=sys.stdin, help = 'Path to outdir')
