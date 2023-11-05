@@ -1,5 +1,7 @@
-# Umol
+# Umol - **U**niversal **mol**ecular framework
+
 ## Structure prediction of protein-ligand complexes from sequence information
+The protein is represented with a multiple sequence alignment and the ligand as a SMILES string, allowing for unconstrained flexibility in the protein-ligand interface. At a high accuracy threshold, unseen protein-ligand complexes can be predicted more accurately than for RoseTTAFold-AA, and at medium accuracy even classical docking methods that use known protein structures as input are surpassed.
 
 <img src="./Network.svg"/>
 
