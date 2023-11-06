@@ -6,7 +6,9 @@ The protein is represented with a multiple sequence alignment and the ligand as 
 <img src="./Network.svg"/>
 
 Umol is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). \
-The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
+The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode). \
+
+[Read the paper here](https://www.biorxiv.org/content/10.1101/2023.11.03.565471v1)
 
 # Colab (run Umol in the browser)
 
