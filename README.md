@@ -3,12 +3,14 @@
 ## Structure prediction of protein-ligand complexes from sequence information
 The protein is represented with a multiple sequence alignment and the ligand as a SMILES string, allowing for unconstrained flexibility in the protein-ligand interface. At a high accuracy threshold, unseen protein-ligand complexes can be predicted more accurately than for RoseTTAFold-AA, and at medium accuracy even classical docking methods that use known protein structures as input are surpassed.
 
+[Read the paper here](https://www.biorxiv.org/content/10.1101/2023.11.03.565471v1)
+
 <img src="./Network.svg"/>
 
 Umol is available under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). \
-The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode). \
+The Umol parameters are made available under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode).
 
-[Read the paper here](https://www.biorxiv.org/content/10.1101/2023.11.03.565471v1)
+
 
 # Colab (run Umol in the browser)
 
