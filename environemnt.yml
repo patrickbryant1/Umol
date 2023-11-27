@@ -143,8 +143,10 @@ dependencies:
   - libwebp-base=1.3.2=hd590300_0
   - libxcb=1.15=h0b41bf4_0
   - libxml2=2.11.6=h232c23b_0
+  - libxslt=1.1.37=h0054252_1
   - libzip=1.10.1=h2629f0a_3
   - libzlib=1.2.13=hd590300_5
+  - lxml=4.9.3=py39hed45dcc_1
   - lz4-c=1.9.4=hcb278e6_0
   - lzo=2.10=h516909a_1000
   - markupsafe=2.1.3=py39hd1e30aa_1
@@ -178,7 +180,8 @@ dependencies:
   - openff-utilities=0.1.11=pyhd8ed1ab_0
   - openjpeg=2.5.0=h488ebb8_3
   - openmm=8.0.0=py39ha58fe7e_4
-  - openssl=3.1.4=hd590300_0
+  - openmmforcefields=0.11.2=pyhd8ed1ab_1
+  - openssl=3.2.0=hd590300_0
   - overrides=7.4.0=pyhd8ed1ab_0
   - packaging=23.2=pyhd8ed1ab_0
   - packmol=20.010=h86c2bf4_0
@@ -235,6 +238,7 @@ dependencies:
   - rfc3986-validator=0.1.1=pyh9f0ad1d_0
   - rlpycairo=0.2.0=pyhd8ed1ab_0
   - rpds-py=0.13.0=py39h9fdd4d6_0
+  - scipy=1.11.4=py39h474f0d3_0
   - send2trash=1.8.2=pyh41d4057_0
   - setuptools=68.2.2=pyhd8ed1ab_0
   - six=1.16.0=pyh6c4a22f_0
@@ -247,6 +251,7 @@ dependencies:
   - sysroot_linux-64=2.12=he073ed8_16
   - terminado=0.18.0=pyh0d859eb_0
   - tinycss2=1.2.1=pyhd8ed1ab_0
+  - tinydb=4.8.0=pyhd8ed1ab_0
   - tk=8.6.13=noxft_h4845f30_101
   - tomli=2.0.1=pyhd8ed1ab_0
   - tornado=6.3.3=py39hd1e30aa_1
@@ -260,6 +265,7 @@ dependencies:
   - unicodedata2=15.1.0=py39hd1e30aa_0
   - uri-template=1.3.0=pyhd8ed1ab_0
   - urllib3=2.1.0=pyhd8ed1ab_0
+  - validators=0.22.0=pyhd8ed1ab_0
   - wcwidth=0.2.10=pyhd8ed1ab_0
   - webcolors=1.13=pyhd8ed1ab_0
   - webencodings=0.5.1=pyhd8ed1ab_2
@@ -302,13 +308,12 @@ dependencies:
       - google-pasta==0.2.0
       - grpcio==1.59.3
       - h5py==3.10.0
-        - immutabledict==2.0.0
+      - immutabledict==2.0.0
       - jax==0.3.24
       - jaxlib==0.3.24+cuda11.cudnn82
       - jmp==0.0.4
       - keras==2.12.0
       - libclang==16.0.6
-      - lxml==4.9.3
       - markdown==3.5.1
       - ml-collections==0.1.1
       - mmpbsa-py==16.0
@@ -327,7 +332,6 @@ dependencies:
       - requests-oauthlib==1.3.1
       - rsa==4.9
       - sander==22.0
-      - scipy==1.11.4
       - tabulate==0.9.0
       - tensorboard==2.12.3
       - tensorboard-data-server==0.7.2
@@ -338,4 +342,4 @@ dependencies:
       - toolz==0.12.0
       - werkzeug==3.0.1
       - wrapt==1.14.1
-prefix: /home/ubuntu/
+prefix: /home/ubuntu/mambaforge-pypy3/envs/umol
