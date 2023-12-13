@@ -110,8 +110,7 @@ python3 ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
 --outdir $OUTDIR
 ```
 
-## Generate pocket indices file from a list of what residues (zero indexed) are in the pocket (all CBs within 10Å from the ligand)
-If you don't have a pocket_indices.npy file, please use this code:
+## Generate a pocket indices file from a list of what residues (zero indexed) are in the pocket (all CBs within 10Å from the ligand). (seconds)
 ```
 python3 ./src/make_targetpost_npy.py --outfile $POCKET_INDICES --target_pos "50,51,53,54,55,56,57,58,59,60,61,62,64,65,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,92,93,94,95,96,97,98,99,100,101,103,104,124,127,128"
 ```
