@@ -110,22 +110,10 @@ python3 ./src/make_ligand_feats.py --input_smiles $LIGAND_SMILES \
 --outdir $OUTDIR
 ```
 
-## Generate pocket indices file
-If you don't have pocket_indices.npy file, please use this code:
+## Generate pocket indices file from a list of what residues (zero indexed) are in the pocket (all CBs within 10Å from the ligand)
+If you don't have a pocket_indices.npy file, please use this code:
 ```
-python ./src/ make_targetpost_npy.py [-h] [--target_pos TARGET_POS] [--outfile OUTFILE]
-
-options:
-  -h, --help            show this help message and exit
-  --target_pos TARGET_POS
-                        A list of positions which are delimitered by comma. Ex: "51,52,54,55,56,57,58,59,60,61,62,63,6
-                        5,66,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,93,94,95,96,97,98,99"
-  --outfile OUTFILE     save to .npy
-```
-
-Example:
-```
-python src/make_targetpost_npy.py --outfile test.npy --target_pos "51,52,54,55,56,57,58,59,60,61,62,63,65,66,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,93,94,95,96,97,98,99"
+python3 ./src/make_targetpost_npy.py --outfile $POCKET_INDICES --target_pos "50,51,53,54,55,56,57,58,59,60,61,62,64,65,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,92,93,94,95,96,97,98,99,100,101,103,104,124,127,128"
 ```
 
 ## Predict (a few minutes)
