@@ -6,7 +6,7 @@ from typing import NamedTuple
 import haiku as hk
 import jax
 import jax.numpy as jnp
-import optax
+#import optax
 #Silence tf
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow.compat.v1 as tf
@@ -252,5 +252,3 @@ def save_structure(save_feats, result, outname):
 
     with open(outname, 'w') as f:
         f.write(unrelaxed_pdb)
-
-
