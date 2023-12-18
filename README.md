@@ -34,3 +34,8 @@ bash install_dependencies.sh
 conda activate umol
 bash predict.sh
 ```
+
+# Citation
+Structure prediction of protein-ligand complexes from sequence information with Umol
+Patrick Bryant, Atharva Kelkar, Andrea Guljas, Cecilia Clementi, Frank Noé
+bioRxiv 2023.11.03.565471; doi: https://doi.org/10.1101/2023.11.03.565471
