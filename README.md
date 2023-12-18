@@ -16,20 +16,20 @@ The Umol parameters are made available under the terms of the [CC BY 4.0 license
 [Colab Notebook](https://colab.research.google.com/github/patrickbryant1/Umol/blob/master/Umol.ipynb)
 
 # Local installation
+## (several minutes)
 The entire installation takes <1 hour on a standard computer. \
 The runtime will depend on the GPU you have available and the size of the protein-ligand complex you are predicting. \
 On an NVIDIA A100 GPU, the prediction time is a few minutes on average.
 
-
-## Install packages and databases (several minutes)
-To do this, first install miniconda, see: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html
+First install miniconda, see: https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html or https://docs.conda.io/projects/miniconda/en/latest/miniconda-other-installer-links.html
 
 ```
 bash install_dependencies.sh
 ```
 
 
-# Run the test case (a few minutes)
+# Run the test case
+## (a few minutes)
 ```
 conda activate umol
 bash predict.sh
