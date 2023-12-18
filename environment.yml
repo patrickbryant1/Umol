@@ -318,8 +318,7 @@ dependencies:
       - grpcio==1.60.0
       - h5py==3.10.0
       - immutabledict==2.0.0
-      - jax==0.4.19
-      - jaxlib==0.4.21+cuda12.cudnn89
+      - jax==0.4.23
       - jmp==0.0.4
       - keras-nightly==3.0.1.dev2023121103
       - libclang==16.0.6

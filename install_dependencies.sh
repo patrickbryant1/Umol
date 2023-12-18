@@ -2,6 +2,10 @@
 conda env create -f environment.yml
 
 wait
+conda activate umol
+pip install --upgrade "jax[cuda12_local]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+conda deactivate
+
 ## Get network parameters for Umol (a few minutes)
 wget https://zenodo.org/records/10397462/files/params40000.npy
 mkdir data/params

@@ -6,7 +6,6 @@ from typing import NamedTuple
 import haiku as hk
 import jax
 import jax.numpy as jnp
-import optax
 #Silence tf
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow.compat.v1 as tf
