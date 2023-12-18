@@ -1,4 +1,4 @@
-name: jax_bio
+name: umol
 channels:
   - conda-forge
   - defaults
