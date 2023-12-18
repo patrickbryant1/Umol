@@ -29,7 +29,7 @@ bash install_dependencies.sh
 ```
 
 
-# Run the test case
+# Run the test case (a few minutes)
 ```
 conda activate umol
 bash predict.sh
