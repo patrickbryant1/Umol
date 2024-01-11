@@ -26,16 +26,19 @@ python3 ./src/make_targetpost_npy.py --outfile $POCKET_INDICES --target_pos "50,
 ## Predict (a few minutes)
 MSA_FEATS=$OUTDIR/msa_features.pkl
 LIGAND_FEATS=$OUTDIR/ligand_inp_features.pkl
-PARAMS=data/params/params40000.npy
+POCKET_PARAMS=data/params/params_pocket.npy #Umol-pocket params
+NO_POCKET_PARAMS=data/params/params_no_pocket.npy #Umol no-pocket params
 NUM_RECYCLES=3
-
+#Change to no-pocket params if no pocket
+#Then also leave out the target pos
 python3 ./src/predict.py --msa_features  $MSA_FEATS \
 --ligand_features $LIGAND_FEATS \
 --id $ID \
---ckpt_params $PARAMS \
+--ckpt_params $POCKET_PARAMS \
 --target_pos $POCKET_INDICES \
 --num_recycles $NUM_RECYCLES \
 --outdir $OUTDIR
+
 
 wait
 RAW_PDB=$OUTDIR/$ID'_pred_raw.pdb'

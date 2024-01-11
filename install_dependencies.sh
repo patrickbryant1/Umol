@@ -7,9 +7,13 @@ pip install --upgrade "jax[cuda12_local]" -f https://storage.googleapis.com/jax-
 conda deactivate
 
 ## Get network parameters for Umol (a few minutes)
+#Pocket params
 wget https://zenodo.org/records/10397462/files/params40000.npy
 mkdir data/params
 mv params40000.npy  data/params/
+#No-pocket params
+wget wget https://zenodo.org/records/10489242/files/params60000.npy
+mv params60000.npy  data/params/
 
 wait
 ## Get Uniclust30 (10-20 minutes depending on bandwidth)

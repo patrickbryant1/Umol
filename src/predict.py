@@ -276,7 +276,10 @@ msa_features = args.msa_features[0]
 ligand_features = args.ligand_features[0]
 id = args.id[0]
 ckpt_params =  np.load(args.ckpt_params[0], allow_pickle=True)
-target_pos = np.load(args.target_pos[0])
+try:
+    target_pos = np.load(args.target_pos[0])
+except:
+    target_pos = []
 num_recycles = args.num_recycles[0]
 outdir = args.outdir[0]
 
