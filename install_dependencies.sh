@@ -12,7 +12,7 @@ wget https://zenodo.org/records/10397462/files/params40000.npy
 mkdir data/params
 mv params40000.npy  data/params/params_pocket.npy
 #No-pocket params
-wget wget https://zenodo.org/records/10489242/files/params60000.npy
+wget https://zenodo.org/records/10489242/files/params60000.npy
 mv params60000.npy  data/params/params_no_pocket.npy
 
 wait
