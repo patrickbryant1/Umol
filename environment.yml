@@ -366,4 +366,4 @@ dependencies:
       - tree==0.2.4
       - werkzeug==3.0.1
       - wrapt==1.14.1
-prefix: /proj/berzelius-2023-267/users/x_patbr/software/miniconda3/envs/jax_bio
+prefix: ./envs/
