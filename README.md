@@ -36,6 +36,18 @@ conda activate umol
 bash predict.sh
 ```
 
+## Extract target positions from a pdb file of your choice
+```
+PDB_FILE=./data/test_case/7NB4/7NB4.pdb1
+PROTEIN_CHAIN='A'
+LIGAND_NAME='U6Q'
+OUTDIR=./data/test_case/7NB4/
+python3 ./src/parse_pocket.py --pdb_file $PDB_FILE \
+--protein_chain $PROTEIN_CHAIN \
+--ligand_name $LIGAND_NAME \
+--outdir $OUTDIR
+```
+
 # Citation
 Structure prediction of protein-ligand complexes from sequence information with Umol
 Patrick Bryant, Atharva Kelkar, Andrea Guljas, Cecilia Clementi, Frank Noé
