@@ -12,10 +12,20 @@ import pdb
 
 parser = argparse.ArgumentParser(description = """Builds the ligand input feats and ground truth structural features for the loss calculations.""")
 
-parser.add_argument('--input_smiles', nargs=1, type= str, default=sys.stdin, help = 'Smiles string. Note that these should be canonical.')
+parser.add_argument('--input_smiles', nargs=1, type= str, default=sys.stdin, help = 'SMILES string. Note that these should be canonical.')
+parser.add_argument('--input_sdf', nargs=1, type= str, default=sys.stdin, help = 'Sdf. Optional - will be converted to SMILES')
 parser.add_argument('--outdir', nargs=1, type= str, default=sys.stdin, help = 'Path to output directory. Include /in end')
 
 ##############FUNCTIONS##############
+
+def sdf_to_smiles(input_sdf):
+    """Read sdf and convert to SMILES
+    """
+    with Chem.SDMolSupplier(input_sdf) as suppl:
+        for mol in suppl:
+            return AllChem.MolToSmiles(mol)
+
+
 
 def bonds_from_smiles(smiles_string, atom_encoding):
     """Get all bonds from the smiles
@@ -64,7 +74,10 @@ def bonds_from_smiles(smiles_string, atom_encoding):
 #Parse args
 args = parser.parse_args()
 #Data
-input_smiles = args.input_smiles[0]
+try:
+    input_smiles = args.input_smiles[0]
+except:
+    input_smiles = sdf_to_smiles(args.input_sdf[0])
 outdir = args.outdir[0]
 
 #Atom encoding - no hydrogens
