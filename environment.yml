@@ -362,7 +362,7 @@ dependencies:
       - termcolor==2.4.0
       - tf-estimator-nightly==2.14.0.dev2023080308
       - tf-keras-nightly==2.16.0.dev2023121110
-      - tf-nightly==2.16.0.dev20231211
+      - tensorflow==2.16.1
       - tree==0.2.4
       - werkzeug==3.0.1
       - wrapt==1.14.1
