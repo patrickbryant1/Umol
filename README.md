@@ -3,7 +3,7 @@
 ## Structure prediction of protein-ligand complexes from sequence information
 The protein is represented with a multiple sequence alignment and the ligand as a SMILES string, allowing for unconstrained flexibility in the protein-ligand interface. There are two versions of Umol: one that uses protein pocket information (recommended) and one that does not. Please see the runscript (predict.sh) for more information.
 
-[Read the paper here](https://www.biorxiv.org/content/10.1101/2023.11.03.565471v1)
+[Read the paper here](https://www.nature.com/articles/s41467-024-48837-6)
 
 <img src="./Network.svg"/>
 
@@ -49,6 +49,5 @@ python3 ./src/parse_pocket.py --pdb_file $PDB_FILE \
 ```
 
 # Citation
-Structure prediction of protein-ligand complexes from sequence information with Umol
-Patrick Bryant, Atharva Kelkar, Andrea Guljas, Cecilia Clementi, Frank Noé
-bioRxiv 2023.11.03.565471; doi: https://doi.org/10.1101/2023.11.03.565471
+Bryant, P., Kelkar, A., Guljas, A. Clementi, C. and Noé F.
+Structure prediction of protein-ligand complexes from sequence information with Umol. Nat Commun 15, 4536 (2024). https://doi.org/10.1038/s41467-024-48837-6
