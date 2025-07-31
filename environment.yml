@@ -184,7 +184,7 @@ dependencies:
   - openff-utilities=0.1.12=pyhd8ed1ab_0
   - openjpeg=2.5.0=h488ebb8_3
   - openmm=8.1.0=py312hc343695_1
-  - openmmforcefields=0.11.2=pyhd8ed1ab_1
+  - openmmforcefields>0.11.2=pyhd8ed1ab_1
   - openssl=3.2.0=hd590300_1
   - opt-einsum=3.3.0=hd8ed1ab_2
   - opt_einsum=3.3.0=pyhd3eb1b0_1
